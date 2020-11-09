@@ -16,16 +16,17 @@ def get_data (type_of, query_string):
 
   try: 
     
-    r = requests.get(f'http://tb.plazi.org/GgServer/srsStats/stats?outputFields'
-                     '=doc.articleUuid+tax.classEpithet+tax.orderEpithet+'
-                     'tax.familyEpithet+tax.genusEpithet+tax.speciesEpithet'
-                     '+matCit.country+matCit.longLatStatus+matCit.collector'
-                     '+matCit.accessionNumber+matCit.typeStatus&groupingFields'
-                     '=doc.articleUuid+tax.classEpithet+tax.orderEpithet+'
-                     'tax.familyEpithet+tax.genusEpithet+tax.speciesEpithet'
-                     '+matCit.country+matCit.longLatStatus+matCit.collector+'
-                     'matCit.accessionNumber+matCit.typeStatus'
-                     '&FP-matCit.accessionNumber=' + query_string + '&format=JSON')
+    r = requests.get("http://tb.plazi.org/GgServer/srsStats/stats?outputFields"
+                     "=doc.articleUuid+tax.classEpithet+tax.orderEpithet+"
+                     "tax.familyEpithet+tax.genusEpithet+tax.speciesEpithet"
+                     "+matCit.country+matCit.longLatStatus+matCit.collector"
+                     "+matCit.accessionNumber+matCit.typeStatus&groupingFields"
+                     "=doc.articleUuid+tax.classEpithet+tax.orderEpithet+"
+                     "tax.familyEpithet+tax.genusEpithet+tax.speciesEpithet"
+                     "+matCit.country+matCit.longLatStatus+matCit.collector+"
+                     "matCit.accessionNumber+matCit.typeStatus"
+                     "&FP-matCit.accessionNumber=%25{}%25&format=JSON"
+                     .format(query_string))
     
     if r.status_code == 200:
       print("Test passed")
