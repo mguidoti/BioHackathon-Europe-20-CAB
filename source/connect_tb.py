@@ -1,8 +1,5 @@
 import requests, logging
 
-from . import name_classifier
-
-
 logger = logging.getLogger(__name__)
 
 
@@ -83,7 +80,7 @@ def get_data (taxon):
     # Family TB API Call
     elif taxon_status == 'family':
       
-      r = request.get("http://tb.plazi.org/GgServer/srsStats/stats"
+      r = requests.get("http://tb.plazi.org/GgServer/srsStats/stats"
                       "?outputFields=tax.kingdomEpithet+tax.phylumEpithet"
                       "+tax.classEpithet+tax.orderEpithet+tax.familyEpithet"
                       "+tax.genusEpithet+tax.speciesEpithet+matCit.country"
