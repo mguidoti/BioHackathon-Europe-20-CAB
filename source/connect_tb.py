@@ -116,7 +116,11 @@ def get_data (taxon):
     
     if len(data) > 0: 
       return r.json()['data']
+    
     else:
+      logger.warn('The taxon {} has no results'
+                  .format(taxon_name.upper()))
+      
       return None
   
   else: 

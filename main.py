@@ -1,7 +1,13 @@
-import pandas, logging
+import pandas as pd 
+import logging
 
 from source.connect_tb import get_data
 from source.name_classifier import classify
+from source.combine_tb import combine
+
+
+
+
 
 if __name__ == "__main__":
   # execute only if run as a script
@@ -14,11 +20,15 @@ if __name__ == "__main__":
   )
   
   original_taxon_list = [
-    "Pterovianaida duckensis"
+      "Pterovianaida duckensis",
+      "Pterovianaida melchiori",
+      "Rhinolophus",
+      "Rhinolophys"
   ]
-  
+
   taxon_list = classify(original_taxon_list)
+
+  df = combine(taxon_list)
   
-  for taxon in taxon_list:
-    print(get_data(taxon))
-    
+  print(df.shape)
+  # Send the DF to your functions here, Dario
