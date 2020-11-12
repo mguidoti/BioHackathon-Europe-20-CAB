@@ -1,3 +1,9 @@
+# FILES
 Pipfile.lock
-.vscode/
 *.log
+*.ipynb
+
+# FOLDERS
+.vscode/
+__pycache__
+
