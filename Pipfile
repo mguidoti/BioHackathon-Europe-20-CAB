@@ -9,6 +9,7 @@ test = "python test.py"
 
 [dev-packages]
 pylint = "*"
+ipykernel = "*"
 
 [packages]
 requests = "*"
