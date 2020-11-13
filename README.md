@@ -19,6 +19,7 @@ If you want to change the original list of taxa, change the content of the list
 
 
 ## file structure
+```
 |--source/
   |--combine_tb.py          Combine tb results into a pandas.DataFrame with additional info
   |--connect_tb.py          API calls to TB, returns list of dicts as results
@@ -31,11 +32,11 @@ If you want to change the original list of taxa, change the content of the list
 |--LICENSE
 |--Pipfile
 |--README.md
-|--**data.pkl**                 All matCits of Rhinolophus in the system was saved here
+|--**data.pkl**             All matCits of Rhinolophus in the system was saved here
 |--main.py                  Call the other functions
 |--syno2pandas.py           Split and rename AccessionNumber column
 |--test.py                  Run test suites
-
+```
 
 ## others
 We tried to follow [Udacity's Git Commit Message Style Guide](https://udacity.github.io/git-styleguide/).
